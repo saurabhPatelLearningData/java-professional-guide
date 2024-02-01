@@ -432,6 +432,32 @@ sop("Main Thread")
 }
 }
 
+```
 
+
+With Lambda Expression
 
 ```
+class ThreadDemo {
+
+public static void main(String args[]) {
+
+Runnable r = ()->{
+   for(int i=0; i<10; i++) {
+   sop("Child Thread")
+   }
+}
+
+Thread t = new Thread(r);
+t.start();
+for(int i=0; i<10; i++) {
+   sop("Main Thread")
+   }
+
+}
+
+}
+
+```
+
+### Summary For Functional Interface
