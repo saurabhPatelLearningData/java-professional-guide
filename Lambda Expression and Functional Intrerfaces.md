@@ -461,3 +461,38 @@ for(int i=0; i<10; i++) {
 ```
 
 ### Summary For Functional Interface
+
+1. It should contain exactly one abstract method (SAM).
+2. It can contains any number of default and static methods.
+3. It act as a type for lambda expression.
+    Example: Interf i = ()->sop("hello");
+4. It can be used to invoke lambda expression.
+    Example: i.m1();
+
+**Case-1** Why functional interface should contain only one abstract method ?
+
+```
+interface MyInterface {
+ public void m1(int num);
+ public void m2(int num);
+}
+
+class MyClass {
+ public static void main (String args[]) {
+  
+  Interface i1 = num->sop(num*num);
+  Interface i2 = num->sop(num*num);
+ 
+ }
+
+}
+
+**Compile Time Error:** Incompatible type: MyInterface is not a functional interface
+
+```
+
+
+**Case-2** What is the advantage of @Functional Interface ?
+
+Adding extra functions helps mark the interface as a functional one, making it easier to read. Without this, there's a chance someone might mistakenly add more abstract methods
+
