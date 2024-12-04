@@ -31,3 +31,18 @@ public class TestComparatorForSet {
 
   }
 }
+
+class ThreadDemo {
+  public static void main(String[] args) {
+    Runnable run = ()-> {
+      for (int i =0; i<5; i++) {
+        System.out.println("Child Thread");
+      }
+    };
+    Thread thread = new Thread(run);
+    thread.start();
+    for (int i=0; i<5; i++) {
+      System.out.println("Main Thread");
+    }
+  }
+}
